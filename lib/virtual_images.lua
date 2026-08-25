@@ -33,8 +33,12 @@ function VirtualImages.install()
           local shade = math.floor(high / divisor) % 2 * 2
             + math.floor(low / divisor) % 2
           local value = 1 - shade / 3
+          local color = asset.palette and asset.palette[shade + 1]
+          local red = color and color[1] / 255 or value
+          local green = color and color[2] / 255 or value
+          local blue = color and color[3] / 255 or value
           local alpha = asset.transparentZero and shade == 0 and 0 or 1
-          image:setPixel(tileX + x, tileY + y, value, value, value, alpha)
+          image:setPixel(tileX + x, tileY + y, red, green, blue, alpha)
         end
       end
     end

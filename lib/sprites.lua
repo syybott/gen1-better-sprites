@@ -62,6 +62,31 @@ function Sprites.back(reader, layout, species)
   return decodePic(reader, layout, species, "back", 6)
 end
 
+local function gbcColor(lo, hi)
+  local value = lo + hi * 0x100
+  local function expand(channel)
+    return math.floor(channel * 255 / 31 + 0.5)
+  end
+  return {
+    expand(value % 0x20),
+    expand(math.floor(value / 0x20) % 0x20),
+    expand(math.floor(value / 0x400) % 0x20),
+  }
+end
+
+function Sprites.palette(reader, layout, species)
+  local table_ = assert(layout.pokemonPalettes, "missing Pokemon palette table")
+  -- Row zero is the unused species entry. Each species row stores the two
+  -- normal middle colors followed by the two shiny middle colors.
+  local bytes = reader:read(table_.bank, table_.address + species * 8, 4)
+  return {
+    { 255, 255, 255 },
+    gbcColor(bytes:byte(1), bytes:byte(2)),
+    gbcColor(bytes:byte(3), bytes:byte(4)),
+    { 0, 0, 0 },
+  }
+end
+
 function Sprites.icon(reader, layout, species)
   local iconIndex = reader:byte(
     layout.monMenuIcons.bank, layout.monMenuIcons.address + species - 1)

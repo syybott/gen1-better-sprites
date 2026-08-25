@@ -8,6 +8,7 @@ Layouts.gold = {
   iconPointers = { bank = 0x23, address = 0x6a70 },
   icons = { bank = 0x23, address = 0x6abe },
   monMenuIcons = { bank = 0x23, address = 0x6975 },
+  pokemonPalettes = { bank = 0x02, address = 0x6d3d },
   picBankFix = {
     [0x13] = 0x1f,
     [0x14] = 0x20,
@@ -23,6 +24,7 @@ Layouts.silver = {
   iconPointers = { bank = 0x23, address = 0x6a56 },
   icons = { bank = 0x23, address = 0x6aa4 },
   monMenuIcons = { bank = 0x23, address = 0x695b },
+  pokemonPalettes = { bank = 0x02, address = 0x6d3d },
   picBankFix = Layouts.gold.picBankFix,
 }
 
@@ -34,6 +36,7 @@ Layouts.crystal = {
   iconPointers = { bank = 0x23, address = 0x6bbf },
   icons = { bank = 0x23, address = 0x6c0d },
   monMenuIcons = { bank = 0x23, address = 0x6ac4 },
+  pokemonPalettes = { bank = 0x02, address = 0x68ce },
   picBankOffset = 0x36,
 }
 
