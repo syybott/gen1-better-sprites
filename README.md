@@ -1,6 +1,6 @@
 # Gen1BetterSprites 🎨
 
-Gen1BetterSprites is a Gen1Recomp mod that locally derives Pokémon artwork from user-supplied Pokémon Gold, Silver, and Crystal ROMs. The repository does **not** contain extracted or ROM-derived image assets.
+Gen1BetterSprites is a Gen1Recomp mod that locally derives Pokémon artwork from user-supplied Pokémon Gold, Silver, and Crystal ROMs. The repository does **not** contain extracted or ROM-derived image assets. Still working animations
 
 ## Importing ROMs 📦
 
